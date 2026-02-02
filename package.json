@@ -1,0 +1,10 @@
+{
+  "name": "kira-poetic-uncertain",
+  "private": true,
+  "scripts": {
+    "dev": "serve public"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

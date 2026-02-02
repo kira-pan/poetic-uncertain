@@ -1,0 +1,135 @@
+﻿IMAGE-BASED ENGLISH PHRASE STRUCTURE RULES
+(root folder: word_cutouts/)
+
+
+GOAL
+Generate sentence-like image sequences that follow English phrase structure.
+Meaning, capitalization, agreement, and tense do not matter.
+
+
+AVAILABLE FOLDERS
+word_cutouts/
+  determiner/
+  adjective/
+  noun/
+  verb/
+  adverb/
+  preposition/
+  NP/
+  VP/
+  prepositional_phrase/
+
+
+--------------------------------
+SENTENCE RULES (S)
+--------------------------------
+
+
+S → NP VP
+S → NP VP NP
+S → NP VP PP
+S → PP NP VP
+S → NP VP NP PP
+S → NP VP PP PP
+
+
+Choose one S rule per generation.
+
+
+--------------------------------
+NOUN PHRASE RULES (NP)
+--------------------------------
+
+
+NP may be selected from:
+- word_cutouts/NP/
+
+
+OR constructed using:
+
+
+NP → Det N
+NP → Det Adj N
+NP → Det Adj Adj N
+NP → Adj N
+NP → N
+NP → N PP
+
+
+Constraints:
+- Determiner optional
+- Max 2 adjectives
+- Max 1 PP per NP
+
+
+--------------------------------
+VERB PHRASE RULES (VP)
+--------------------------------
+
+
+VP may be selected from:
+- word_cutouts/VP/
+
+
+OR constructed using:
+
+
+VP → V
+VP → V NP
+VP → Adv V
+VP → V Adv
+VP → Adv V NP
+VP → V NP Adv
+VP → V PP
+VP → Adv V NP PP
+
+
+Constraints:
+- Adverb optional
+- NP optional
+- Max 2 adverbs
+- Max 1 PP per VP
+
+
+--------------------------------
+PREPOSITIONAL PHRASE RULES (PP)
+--------------------------------
+
+
+PP may be selected from:
+- word_cutouts/prepositional_phrase/
+
+
+OR constructed using:
+
+
+PP → Prep NP
+
+
+--------------------------------
+ATTACHMENT LIMITS
+--------------------------------
+
+
+- Max 2 total PPs per sentence
+- Avoid more than 2 modifiers in sequence
+- Hard cap sentence length ~15–18 image tokens
+
+
+--------------------------------
+RANDOMNESS GUIDELINES
+--------------------------------
+
+
+Suggested probabilities:
+- use prebuilt NP: 25%
+- use prebuilt VP: 20%
+- use prebuilt PP: 20%
+- add adjective to NP: 60%
+- add adverb to VP: 50%
+- add PP to NP or VP: 30%
+
+
+--------------------------------
+END OF RULES
+--------------------------------
