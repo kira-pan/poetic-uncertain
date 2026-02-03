@@ -9,18 +9,7 @@
 - **Regenerate** to build a whole new sentence from scratch.
 - Each phrase type (noun, verb, adjective, etc.) has its own sound when you interact with it.
 
-Categories (and thus the “notes”) include: determiner, adjective, noun, verb, adverb, preposition, full NP, VP, and prepositional phrase.
-
-## Run locally
-
-From the project root:
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the URL shown (e.g. http://localhost:3000). The app is served from the `public` folder.
+Different parts of speech include: determiner, adjective, noun, verb, adverb, preposition, full NP, VP, and prepositional phrase.
 
 ## Project layout
 
